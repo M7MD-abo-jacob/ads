@@ -1,6 +1,6 @@
 import { Container, Nav, Navbar, Offcanvas } from 'react-bootstrap';
 import { NavLink } from 'react-router-dom';
-import SigninButton from './SignInButton';
+import LoginButton from './LogInButton';
 
 function NavBar() {
   return (
@@ -26,8 +26,8 @@ function NavBar() {
             </Offcanvas.Title>
           </Offcanvas.Header>
           <Offcanvas.Body>
-            {/* ==================== SigninButton for small screens ==================== */}
-            <SigninButton className="d-block d-md-none w-100" />
+            {/* ==================== LoginButton for small screens ==================== */}
+            <LoginButton className="d-block d-md-none w-100" />
             <Nav as="ul" className="justify-content-end flex-grow-1 pe-3">
               <li>
                 <NavLink to="/" className="nav-link">
@@ -42,8 +42,8 @@ function NavBar() {
             </Nav>
           </Offcanvas.Body>
         </Navbar.Offcanvas>
-        {/* ==================== SigninButton for large screens ==================== */}
-        <SigninButton className="d-none d-md-block" />
+        {/* ==================== LoginButton for large screens ==================== */}
+        <LoginButton className="d-none d-md-block" />
       </Container>
     </Navbar>
   );

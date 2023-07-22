@@ -4,8 +4,9 @@ import { useLogoutMutation } from '../../api/userApi';
 import { toast } from 'react-toastify';
 import { clearUser } from '../../store/slices/userSlice';
 import { DropdownButton, NavLink, Navbar } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 
-function SigninButton({ className }) {
+function LoginButton({ className }) {
   const dispatch = useDispatch();
   const user = useSelector((state) => state.user);
   const [logout, { isLoading }] = useLogoutMutation();
@@ -45,12 +46,12 @@ function SigninButton({ className }) {
           </DropdownButton>
         </div>
       ) : (
-        <NavLink to="/login" className="btn btn-primary">
+        <Link to="/login" className="btn btn-primary">
           sign in
-        </NavLink>
+        </Link>
       )}
     </div>
   );
 }
 
-export default SigninButton;
+export default LoginButton;
