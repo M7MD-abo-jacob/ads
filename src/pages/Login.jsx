@@ -10,9 +10,9 @@ import roles from '../data/roles.json';
 
 function LoginPage() {
   const dispatch = useDispatch();
-  const [phone, setPhone] = useState('123456789011');
+  const [phone, setPhone] = useState('');
   const [selectedRole, setSelectedRole] = useState('');
-  const [password, setPassword] = useState('12345678');
+  const [password, setPassword] = useState('');
   const [showPassword, setShowPassword] = useState(false);
 
   const [login, { isLoading }] = useLoginMutation();
