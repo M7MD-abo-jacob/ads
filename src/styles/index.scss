@@ -1,0 +1,146 @@
+// ==================== CHANGED BOOTSTRAP DEFAULT PRIMARY ====================
+@import '../../node_modules/bootstrap/scss/_functions'; // required
+@import '../../node_modules/bootstrap/scss/_variables';
+
+$primary: #a3009e;
+$theme-colors: map-merge(
+  $theme-colors,
+  (
+    'primary': $primary,
+  )
+);
+
+@import '../../node_modules/bootstrap/scss/bootstrap';
+
+// ==================== GLOBAL VALUES ====================
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  width: 100dvw;
+  overflow-x: hidden;
+}
+#root {
+  display: flex;
+  flex-direction: column;
+  min-height: 100dvh;
+}
+footer {
+  margin-top: auto;
+}
+.nav-link.active {
+  border-bottom: 2px solid var(--bs-primary);
+  font-weight: bold;
+}
+
+// ==================== ADS CARD TRANSITION ====================
+.card-img-overlay {
+  display: none !important;
+}
+.card:hover .card-img-overlay,
+.card:focus .card-img-overlay {
+  display: flex !important;
+}
+.card:hover img,
+.card:focus img {
+  filter: blur(5px);
+}
+.card:hover,
+.card:focus {
+  box-shadow: 0 0 0.5em 0.5em var(--bs-primary);
+}
+
+// ==================== ADS GRID LAYOUT ====================
+.grid-container {
+  display: grid;
+  grid-gap: 10px;
+}
+
+.large-grid {
+  grid-template-columns: repeat(auto-fit, minmax(20%, 1fr));
+}
+
+.small-grid {
+  grid-template-columns: repeat(auto-fit, minmax(20%, 1fr));
+}
+
+.grid-item {
+  background-color: gray;
+  padding: 10px;
+}
+
+.large-item {
+  grid-column: span 2;
+  grid-row: span 2;
+}
+.large-item.another {
+  grid-column: 0 / span 2;
+}
+
+.small-item {
+  grid-column: span 1;
+}
+@media screen and (max-width: 992px) {
+  .large-grid {
+    grid-template-columns: repeat(auto-fit, minmax(35%, 1fr));
+  }
+}
+@media screen and (max-width: 576px) {
+  .large-grid {
+    grid-template-columns: repeat(auto-fit, minmax(50%, 1fr));
+  }
+  .large-item {
+    grid-column: span 1;
+    grid-row: span 1;
+  }
+  .small-item {
+    grid-row: span 1;
+  }
+}
+
+// ==================== FLOATING BUTTONS - ADS PAGE ====================
+#actions {
+  position: fixed;
+  width: 100dvw;
+  inset: 85% 0%;
+  bottom: 4rem;
+  inset-inline-start: 2rem;
+}
+#filters {
+  position: fixed;
+  width: 100dvw;
+  inset: 85% 70%;
+  bottom: 4rem;
+  inset-inline-end: 2rem;
+}
+.create-ad-btn span {
+  display: none;
+  width: 0;
+  transition: width 0.3s ease-in-out;
+}
+.create-ad-btn:hover span {
+  display: inline-block !important;
+  width: auto;
+}
+// ==================== GRID EFFECT TO ANIMATE HEIGHT ====================
+.d-grid {
+  display: grid !important;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.5s ease-in-out !important;
+}
+
+.grid-inner {
+  overflow: hidden !important;
+}
+
+.d-grid.active-step {
+  grid-template-rows: 1fr !important;
+}
