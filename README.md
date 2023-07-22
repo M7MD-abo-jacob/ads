@@ -1,14 +1,21 @@
 # Ads test project
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project was made with create-react-app, react-bootstrap, redux-toolkit, and rtk-query
 
 ## To try this react-app on your local machine
 
-run this line of code in your terminal `git remote add origin https://github.com/M7MD-abo-jacob/ads.git`
+run this line of code in your terminal `git clone https://github.com/M7MD-abo-jacob/ads.git`
+
+add a `.env` file in the root directory with a baseURL like this `REACT_APP_BASE_URL=http://test.test/`
 
 then run `npm i` to install the dependencies after you make sure you have node.js installed
 
 finally, you can run `npm start` to start the develepement server
+
+# WARNING... WARNING...
+
+creating and updating advertisements didn't work out with me for some reason,
+sorry and good luck
 
 ## Available Scripts
 
